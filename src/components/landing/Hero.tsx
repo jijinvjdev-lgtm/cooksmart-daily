@@ -29,6 +29,9 @@ const Hero = () => {
             <p className="mt-5 max-w-xl text-balance text-base text-muted-foreground sm:text-lg">
               Get daily meal suggestions, smart grocery lists, and never repeat meals again.
             </p>
+            <p className="mt-3 max-w-xl rounded-2xl border border-primary/15 bg-primary/5 px-4 py-3 text-sm text-muted-foreground">
+              CookSmart is not built yet. This page is only for validating interest before development starts.
+            </p>
             <div className="mt-8 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row">
               <Button asChild size="xl" variant="hero">
                 <a href="#signup">
@@ -39,7 +42,6 @@ const Hero = () => {
                 <a href="#how">See How It Works</a>
               </Button>
             </div>
-            <p className="mt-5 text-xs text-muted-foreground">Free to join · No credit card required</p>
           </motion.div>
 
           <motion.div
@@ -74,7 +76,11 @@ const Hero = () => {
               className="absolute -right-3 top-6 rounded-2xl bg-card/95 p-3 shadow-card backdrop-blur md:-right-6"
             >
               <div className="flex items-center gap-2">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-base" role="img" aria-label="vegetables">
+                <span
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-base"
+                  role="img"
+                  aria-label="vegetables"
+                >
                   🥬
                 </span>
                 <div>
