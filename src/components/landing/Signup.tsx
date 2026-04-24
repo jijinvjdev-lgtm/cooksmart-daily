@@ -1,19 +1,22 @@
-import { useState, FormEvent } from "react";
+import { type FormEvent, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { toast } from "@/hooks/use-toast";
+import { Textarea } from "@/components/ui/textarea";
 
 const Signup = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault();
+  const onSubmit = (event: FormEvent) => {
+    event.preventDefault();
     setSubmitted(true);
-    toast({ title: "You're on the list! 🎉", description: "We'll be in touch soon with early access details." });
+    toast({
+      title: "You're on the list! 🎉",
+      description: "We'll be in touch soon with early access details.",
+    });
   };
 
   return (
@@ -46,11 +49,23 @@ const Signup = () => {
               </div>
               <div>
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" required placeholder="you@example.com" className="mt-1.5 h-12 rounded-xl" />
+                <Input
+                  id="email"
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                  className="mt-1.5 h-12 rounded-xl"
+                />
               </div>
               <div>
-                <Label htmlFor="problem">What's your biggest cooking problem? <span className="text-muted-foreground">(optional)</span></Label>
-                <Textarea id="problem" placeholder="I never know what to cook on weeknights..." className="mt-1.5 min-h-[90px] rounded-xl" />
+                <Label htmlFor="problem">
+                  What's your biggest cooking problem? <span className="text-muted-foreground">(optional)</span>
+                </Label>
+                <Textarea
+                  id="problem"
+                  placeholder="I never know what to cook on weeknights..."
+                  className="mt-1.5 min-h-[90px] rounded-xl"
+                />
               </div>
               <Button type="submit" size="xl" variant="hero" className="w-full">
                 Join Early Access <ArrowRight className="ml-1 h-4 w-4" />

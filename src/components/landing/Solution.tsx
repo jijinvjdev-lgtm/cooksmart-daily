@@ -20,11 +20,9 @@ const Solution = () => {
             transition={{ duration: 0.5 }}
           >
             <span className="text-xs font-semibold uppercase tracking-wider text-primary">The solution</span>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-              Meet your daily cooking assistant
-            </h2>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Meet your daily cooking assistant</h2>
             <p className="mt-4 text-muted-foreground">
-              CookSmart turns daily decisions into a one-tap experience — so you cook more, stress less, and waste nothing.
+              CookSmart turns daily decisions into a one-tap experience so you cook more, stress less, and waste nothing.
             </p>
           </motion.div>
 

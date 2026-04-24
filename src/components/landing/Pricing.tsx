@@ -63,7 +63,7 @@ const plans: Plan[] = [
   },
 ];
 
-const formatPrice = (n: number) => `₹${n.toLocaleString("en-IN")}`;
+const formatPrice = (price: number) => `₹${price.toLocaleString("en-IN")}`;
 
 const Pricing = () => {
   const [yearly, setYearly] = useState(true);
@@ -79,9 +79,7 @@ const Pricing = () => {
           className="mx-auto max-w-2xl text-center"
         >
           <span className="text-xs font-semibold uppercase tracking-wider text-primary">Pricing</span>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-            Simple plans that fit your kitchen
-          </h2>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Simple plans that fit your kitchen</h2>
           <p className="mt-3 text-muted-foreground">Choose a plan. Upgrade or cancel anytime.</p>
 
           <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-border bg-card px-4 py-2 shadow-soft">
@@ -92,9 +90,7 @@ const Pricing = () => {
             <span className={`text-sm font-medium ${yearly ? "text-foreground" : "text-muted-foreground"}`}>
               Yearly
             </span>
-            <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">
-              Save 20%
-            </span>
+            <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">Save 20%</span>
           </div>
         </motion.div>
 
@@ -137,28 +133,22 @@ const Pricing = () => {
                     {plan.monthly === 0
                       ? "No credit card required"
                       : yearly
-                      ? `Just ${formatPrice(Math.round(plan.yearly / 12))}/mo, billed yearly`
-                      : "Billed monthly"}
+                        ? `Just ${formatPrice(Math.round(plan.yearly / 12))}/mo, billed yearly`
+                        : "Billed monthly"}
                   </p>
 
-                  <Button
-                    variant={plan.highlight ? "hero" : "outline"}
-                    size="lg"
-                    className="mt-6 w-full rounded-full"
-                  >
+                  <Button variant={plan.highlight ? "hero" : "outline"} size="lg" className="mt-6 w-full rounded-full">
                     {plan.cta}
                   </Button>
 
                   <ul className="mt-6 space-y-3 text-sm">
-                    {plan.features.map((f) => (
+                    {plan.features.map((feature) => (
                       <li
-                        key={f}
-                        className={`flex items-start gap-2 ${
-                          plan.highlight ? "text-foreground" : "text-muted-foreground"
-                        }`}
+                        key={feature}
+                        className={`flex items-start gap-2 ${plan.highlight ? "text-foreground" : "text-muted-foreground"}`}
                       >
                         <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                        <span>{f}</span>
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>

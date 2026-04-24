@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { ChefHat } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const FinalCTA = () => {
   return (

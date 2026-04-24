@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -5,7 +6,7 @@ import heroMeal from "@/assets/hero-meal.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-hero pt-12 pb-20 md:pt-20 md:pb-28">
+    <section className="relative overflow-hidden bg-gradient-hero pb-20 pt-12 md:pb-28 md:pt-20">
       <div className="absolute inset-0 -z-10 opacity-40">
         <div className="absolute left-1/2 top-0 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-primary/20 blur-[120px]" />
       </div>
@@ -48,11 +49,11 @@ const Hero = () => {
             className="relative mx-auto w-full max-w-md"
           >
             <div className="relative overflow-hidden rounded-3xl shadow-card">
-              <img
+              <Image
                 src={heroMeal}
                 alt="Healthy meal bowl with fresh vegetables"
-                width={1024}
-                height={1024}
+                priority
+                sizes="(min-width: 768px) 40rem, 100vw"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -73,7 +74,9 @@ const Hero = () => {
               className="absolute -right-3 top-6 rounded-2xl bg-card/95 p-3 shadow-card backdrop-blur md:-right-6"
             >
               <div className="flex items-center gap-2">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-base">🥬</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-secondary text-base" role="img" aria-label="vegetables">
+                  🥬
+                </span>
                 <div>
                   <div className="text-xs font-semibold">Grocery ready</div>
                   <div className="text-[11px] text-muted-foreground">12 items · auto</div>

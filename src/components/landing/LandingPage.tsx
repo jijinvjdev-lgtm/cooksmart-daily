@@ -1,15 +1,17 @@
-import Navbar from "@/components/landing/Navbar";
-import Hero from "@/components/landing/Hero";
-import Problem from "@/components/landing/Problem";
-import Solution from "@/components/landing/Solution";
-import Features from "@/components/landing/Features";
-import HowItWorks from "@/components/landing/HowItWorks";
-import Pricing from "@/components/landing/Pricing";
-import Signup from "@/components/landing/Signup";
+"use client";
+
 import FinalCTA from "@/components/landing/FinalCTA";
+import Features from "@/components/landing/Features";
+import Hero from "@/components/landing/Hero";
+import HowItWorks from "@/components/landing/HowItWorks";
+import Navbar from "@/components/landing/Navbar";
+import Pricing from "@/components/landing/Pricing";
+import Problem from "@/components/landing/Problem";
+import Signup from "@/components/landing/Signup";
+import Solution from "@/components/landing/Solution";
 import StickyCTA from "@/components/landing/StickyCTA";
 
-const Index = () => {
+export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background pb-20 md:pb-0">
       <Navbar />
@@ -26,6 +28,4 @@ const Index = () => {
       <StickyCTA />
     </div>
   );
-};
-
-export default Index;
+}
