@@ -43,7 +43,8 @@ const plans: Plan[] = [
       "Auto-generated grocery list",
       "No-repeat meal system",
       "Basic nutrition insights",
-      "Priority updates",
+      "Priority onboarding before public launch",
+      "Founding member pricing locked in",
     ],
   },
   {
@@ -58,6 +59,7 @@ const plans: Plan[] = [
       "Shared grocery list",
       "Suggestions from family",
       "Voting system for meals",
+      "Priority setup for your household",
       "Multi-user support",
     ],
   },
@@ -82,6 +84,10 @@ const Pricing = () => {
           <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">Simple plans that fit your kitchen</h2>
           <p className="mt-3 text-muted-foreground">Choose a plan. Upgrade or cancel anytime.</p>
 
+          <div className="mt-6 rounded-2xl border border-primary/15 bg-primary/5 px-5 py-4 text-sm text-muted-foreground shadow-soft">
+            Pay before launch and you will get priority onboarding, earlier access, and founding-member pricing when CookSmart goes live.
+          </div>
+
           <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-border bg-card px-4 py-2 shadow-soft">
             <span className={`text-sm font-medium ${!yearly ? "text-foreground" : "text-muted-foreground"}`}>
               Monthly
@@ -98,6 +104,7 @@ const Pricing = () => {
           {plans.map((plan, i) => {
             const price = yearly ? plan.yearly : plan.monthly;
             const suffix = plan.monthly === 0 ? "forever" : yearly ? "/year" : "/month";
+            const isPaidPlan = plan.monthly > 0;
 
             return (
               <motion.div
@@ -136,6 +143,8 @@ const Pricing = () => {
                         ? `Just ${formatPrice(Math.round(plan.yearly / 12))}/mo, billed yearly`
                         : "Billed monthly"}
                   </p>
+
+           
 
                   <Button variant={plan.highlight ? "hero" : "outline"} size="lg" className="mt-6 w-full rounded-full">
                     {plan.cta}
