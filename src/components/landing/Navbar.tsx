@@ -10,17 +10,23 @@ const Navbar = () => {
       transition={{ duration: 0.4 }}
       className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl"
     >
-      <nav className="container flex h-16 items-center justify-between px-4">
-        <a href="#" className="flex items-center gap-2">
+      <nav className="container flex h-16 items-center justify-between px-4" aria-label="Primary">
+        <a href="/" className="flex items-center gap-2" aria-label="CookSmart home">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary shadow-glow">
             <ChefHat className="h-5 w-5 text-primary-foreground" />
           </span>
           <span className="text-lg font-bold tracking-tight">CookSmart</span>
         </a>
         <div className="hidden items-center gap-8 md:flex">
-          <a href="#features" className="text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground">Features</a>
-          <a href="#how" className="text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground">How it works</a>
-          <a href="#pricing" className="text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground">Pricing</a>
+          <a href="#features" className="text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground">
+            Features
+          </a>
+          <a href="#how" className="text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground">
+            How it works
+          </a>
+          <a href="#pricing" className="text-sm font-medium text-muted-foreground transition-smooth hover:text-foreground">
+            Pricing
+          </a>
         </div>
         <Button asChild size="sm" variant="hero" className="rounded-full">
           <a href="#signup">Join</a>

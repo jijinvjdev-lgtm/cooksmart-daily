@@ -24,7 +24,7 @@ const Hero = () => {
               Early access now open
             </span>
             <h1 className="text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-              Stop Thinking About <span className="text-primary bg-clip-text">What to Cook</span> Every Day
+              Stop Thinking About <span className="bg-clip-text text-primary">What to Cook</span> Every Day
             </h1>
             <p className="mt-5 max-w-xl text-balance text-base text-muted-foreground sm:text-lg">
               Get daily meal suggestions, smart grocery lists, and never repeat meals again.
